@@ -149,7 +149,7 @@ class uw_tarteaucitron extends Module
      * Add Tac JS script on Front
      */
     public function hookActionFrontControllerSetMedia() {  
-        $this->context->controller->registerJavascript($this->name . '-loader', 'https://tarteaucitron.io/load.js?uuid='.Configuration::get('UWTAC_UUID'), ['server' => 'remote']);    
+        $this->context->controller->registerJavascript($this->name . '-loader', 'https://tarteaucitron.io/load.js?domain=' . $_SERVER['SERVER_NAME'] . '&uuid='.Configuration::get('UWTAC_UUID'), ['server' => 'remote']);    
     }
     /**
      * Write JS Custom for Services
